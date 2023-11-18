@@ -1,11 +1,18 @@
-node {
-  stage('SCM') {
-    git 'https://github.com/sankalpgunturi/todo.git'
-  }
-  stage('SonarQube Analysis') {
-    def scannerHome = tool 'SonarScanner';
-    withSonarQubeEnv() {
-      sh "${scannerHome}/bin/sonar-scanner"
+node{
+// demo
+   stage('SCM Checkout'){
+     git 'https://github.com/javahometech/my-app'
+   }
+   stage('Compile-Package'){
+      // Get maven home path
+      def mvnHome =  tool name: 'maven-3', type: 'maven'   
+      sh "${mvnHome}/bin/mvn package"
+   }
+   
+   stage('SonarQube Analysis') {
+        def mvnHome =  tool name: 'maven-3', type: 'maven'
+        withSonarQubeEnv('sonar-6') { 
+          sh "${mvnHome}/bin/mvn sonar:sonar"
+        }
     }
-  }
 }
