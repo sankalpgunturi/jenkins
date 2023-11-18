@@ -9,16 +9,6 @@ pipeline {
                 }
             }
         }
-
-        stage('Build') {
-            steps {
-                // Use Gradle Wrapper to build the project
-                script {
-                    sh './gradlew clean build'
-                }
-            }
-        }
-
         stage('SonarQube Analysis') {
             steps {
                 script {
