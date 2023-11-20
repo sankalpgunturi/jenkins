@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     echo "Checking out code from Git"
-                    git branch: 'main', url: 'https://github.com/sankalpgunturi/purohitconnect.com.git'
+                    git branch: 'main', url: 'https://github.com/react-boilerplate/react-boilerplate.git'
                 }
             }
         }
