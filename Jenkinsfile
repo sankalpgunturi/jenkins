@@ -55,7 +55,7 @@ pipeline {
                     echo "Running SonarQube analysis"
                     def scannerHome = tool name: 'sonar_scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
                     withSonarQubeEnv() {
-                        sh "${scannerHome}/bin/sonar-scanner -X -Dsonar.login=admin -Dsonar.password=admin"
+                        sh "${scannerHome}/bin/sonar-scanner -X -Dsonar.login=admin -Dsonar.password=admin -Dsonar.projectKey=todo_key -Dsonar.projectName=todo_name -Dsonar.sources=."
                     }
                 }
             }
