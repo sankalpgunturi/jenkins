@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     echo "Checking out code from Git"
-                    git branch: 'main', url: 'https://github.com/python/cpython.git'
+                    git branch: 'main', url: 'https://github.com/python/typing_extensions.git'
                 }
             }
         }
