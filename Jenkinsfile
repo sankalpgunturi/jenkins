@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     echo "Checking out code from Git"
-                    git branch: 'main', url: 'https://github.com/ixartz/Next-js-Boilerplate.git'
+                    git branch: 'main', url: 'https://github.com/ShenDavid/FSE-Social-Network.git'
                 }
             }
         }
